@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import WeatherInfo from "./WeatherInfo";
 import "./App.css";
 
 export default function Weather() {
@@ -95,30 +96,8 @@ export default function Weather() {
           </div>
         </div>
       </form>
-      <div>
-        <div className="country">
-          <h1>{weather.name},</h1>
-          <em>{weather.country}</em>
-        </div>
-        <ul>
-          <li>tuesday 10:00</li>
-          <li>{weather.description}</li>
-        </ul>
-      </div>
-      <div className="row">
-        <div className="col-7 d-flex Weather-temperature">
-          <img src={weather.icon} alt={weather.description} />
-          <strong>{Math.round(weather.temperature)}</strong>
-          <a href="/">°C</a>
-        </div>
-        <div className="col-5">
-          <ul>
-            <li>Humidity: {weather.humidity}%</li>
-            <li>Wind: {weather.wind}km/h</li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
+
+      <WeatherInfo data={weather} />
     </div>
   );
 }
