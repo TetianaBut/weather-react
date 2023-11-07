@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <h1 className="text-center">Hello Weather React </h1>
 
-        <Weather />
+        <Weather defaultCity="New York" />
       </header>
       <footer className="text-center">
         This page was built by 👩‍💻
