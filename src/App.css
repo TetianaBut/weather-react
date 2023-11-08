@@ -12,7 +12,7 @@ h1 {
   font-size: 36px;
   font-weight: 100;
   line-height: 36px;
-  margin: 20px 0 10px;
+  margin: 20px 0 4px;
 }
 ul {
   margin: 0 0 10px;
@@ -88,24 +88,33 @@ li:first-letter {
   color: #1e0eb1;
   /* font-style: italic; */
 }
-.Weather-temperature img {
+/* .Weather-temperature img {
   height: 80px;
   width: 80px;
   position: relative;
   top: -10px;
   right: -6px;
-}
+} */
+/* .Weather-temperature {
+  display: flex;
+  align-items: flex-start;
+} */
 .Weather-temperature strong {
   color: rgb(33, 33, 33);
   font-size: 64px;
+
   font-weight: 400;
   line-height: 1;
+  margin-left: 10px;
 }
 .Weather-temperature a {
   color: #1e0eb1;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.7;
+  /* position: relative;
+  top: -32px;
+  right: -6px; */
 }
 .weather-forecast {
   margin-bottom: 15px;
