@@ -3,46 +3,37 @@ import React, { useState } from "react";
 export default function UnitsChange(props) {
   const [unit, setUnit] = useState("metric");
 
-  function showFarenheit(event) {
+  function showTeperature() {
+    if (unit === "metric") {
+      return Math.round(props.temperature);
+    } else {
+      return Math.round((props.temperature * 9) / 5 + 32);
+    }
+  }
+  function rewriteUnit(event) {
     event.preventDefault();
-    setUnit("imperial");
+    if (unit === "metric") {
+      setUnit("imperial");
+    } else {
+      setUnit("metric");
+    }
   }
-  function showCelcius(event) {
-    event.preventDefault();
-    setUnit("metric");
+  function showUnit() {
+    if (unit === "metric") {
+      return "°C";
+    } else {
+      return "°F";
+    }
   }
-  function farenheit() {
-    return (props.celcius * 9) / 5 + 32;
-  }
-  if (unit === "metric") {
-    return (
-      <div>
-        <div className="Weather-temperature d-flex align-items-start">
-          <strong>{Math.round(props.celcius)}</strong>
 
-          <span className="units">
-            °C |
-            <a href="/" onClick={showFarenheit}>
-              °F
-            </a>
-          </span>
-        </div>
+  return (
+    <div>
+      <div className="Weather-temperature d-flex align-items-start">
+        <strong>{showTeperature()}</strong>
+        <a href="/" onClick={rewriteUnit}>
+          {showUnit()}
+        </a>
       </div>
-    );
-  } else {
-    return (
-      <div>
-        <div className="Weather-temperature d-flex align-items-start">
-          <strong> {Math.round(farenheit())} </strong>
-
-          <span className="units">
-            <a href="/" onClick={showCelcius}>
-              °C
-            </a>
-            |°F
-          </span>
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
 }
