@@ -50,17 +50,17 @@ export default function Weather(props) {
       <div className="Weather-container">
         <form className="form-input}">
           <div className="row d-flex justify-content-center">
-            <div className="col-5">
+            <div className="col-6">
               <input
                 type="search"
-                placeholder="Input name city.."
-                className="form-control search-input"
+                placeholder="Input name city..."
+                className="form-control search-input w-100"
                 autoFocus="on"
                 required
                 onChange={updateCity}
               />
             </div>
-            <div className="col-3">
+            <div className="col-4">
               <input
                 type="submit"
                 className="btn btn-primary w-100 location-btn"
@@ -68,14 +68,14 @@ export default function Weather(props) {
                 onClick={handleSubmit}
               />
             </div>
-            <div className="col-4">
+            {/* <div className="col-4">
               <button
                 type="button"
                 className="btn btn-primary w-100 location-btn"
               >
                 Current location
               </button>
-            </div>
+            </div> */}
           </div>
         </form>
 

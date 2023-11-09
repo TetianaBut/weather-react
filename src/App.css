@@ -39,7 +39,7 @@ li:first-letter {
   border-radius: 10px;
   box-shadow: 3px 4px 6px rgba(37, 39, 89, 0.3);
   margin: 20px auto 10px;
-  max-width: 640px;
+  width: 600px;
   min-width: 300px;
   padding: 20px 32px 15px;
 }
