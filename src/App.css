@@ -28,10 +28,18 @@ li {
 li span {
   color: rgb(30, 14, 177);
 }
-li:first-letter {
+
+li::first-letter {
   text-transform: capitalize;
 }
-
+a {
+  color: #a3b6ff;
+  text-decoration: none;
+  background: transparent;
+}
+a:hover {
+  text-decoration: underline;
+}
 .Weather-container {
   border: 1px solid #dadde1;
   background: white;
@@ -42,6 +50,14 @@ li:first-letter {
   height: 400px;
   min-width: 300px;
   padding: 20px 32px 15px;
+}
+.city-favorites {
+  margin-bottom: 20px;
+}
+.item-city-favorites {
+  display: inline;
+  font-size: 16px;
+  padding: 0 10px;
 }
 .weather-icon {
   height: 64px;
@@ -119,6 +135,7 @@ li:first-letter {
   margin-bottom: 15px;
   text-align: center;
   color: #454545;
+  background-color: #f8f2f24d;
 }
 .weather-week {
   justify-content: center;

@@ -10,18 +10,30 @@ function WeatherForecastDay(props) {
     let day = date.getDay();
     return days[day];
   }
+  function maxTemperature() {
+    if (props.unit === "metric") {
+      return Math.round(props.data.temp.max);
+    } else {
+      return Math.round((props.data.temp.max * 9) / 5 + 32);
+    }
+  }
+
+  function minTemperature() {
+    if (props.unit === "metric") {
+      return Math.round(props.data.temp.min);
+    } else {
+      return Math.round((props.data.temp.min * 9) / 5 + 32);
+    }
+  }
+
   return (
     <div>
       <div className="WeatherForecast-day">{day()}</div>
       <WeatherIcon code={props.data.weather[0].icon} size={36} />
       <div className="weather-forecast-temp">
-        <span className="weather-forecast-max">
-          {Math.round(props.data.temp.max)}°{" "}
-        </span>
+        <span className="weather-forecast-max">{maxTemperature()}° </span>
 
-        <span className="weather-forecast-min">
-          {Math.round(props.data.temp.min)}°
-        </span>
+        <span className="weather-forecast-min">{minTemperature()}°</span>
       </div>
     </div>
   );
@@ -55,10 +67,10 @@ export default function WeatherForecast(props) {
       <div className="weather-forecast">
         <div className="row weather-week mt-4">
           {forecast.map(function (dailyForecast, index) {
-            if (index < 5) {
+            if (index > 0 && index < 7) {
               return (
                 <div className="col weather-forecast-date" key={index}>
-                  <WeatherForecastDay data={dailyForecast} />
+                  <WeatherForecastDay data={dailyForecast} unit={props.unit} />
                 </div>
               );
             } else {
