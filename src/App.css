@@ -51,13 +51,10 @@ a:hover {
   min-width: 300px;
   padding: 20px 32px 15px;
 }
-.city-favorites {
-  margin-bottom: 20px;
-}
 .item-city-favorites {
   display: inline;
   font-size: 16px;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 .weather-icon {
   height: 64px;
@@ -135,7 +132,6 @@ a:hover {
   margin-bottom: 15px;
   text-align: center;
   color: #454545;
-  background-color: #f8f2f24d;
 }
 .weather-week {
   justify-content: center;
@@ -143,7 +139,9 @@ a:hover {
 .weather-forecast-date {
   color: #454545;
   font-size: 16px;
-  padding: 0;
+
+  border-radius: 10px;
+  background-color: #f8f2f24d;
 }
 .weather-forecast-min {
   opacity: 0.5;

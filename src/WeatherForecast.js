@@ -27,12 +27,11 @@ function WeatherForecastDay(props) {
   }
 
   return (
-    <div>
-      <div className="WeatherForecast-day">{day()}</div>
+    <div className="weather-forecast-date">
+      <div className="WeatherForecast-day mb-1 pt-1">{day()}</div>
       <WeatherIcon code={props.data.weather[0].icon} size={36} />
       <div className="weather-forecast-temp">
         <span className="weather-forecast-max">{maxTemperature()}° </span>
-
         <span className="weather-forecast-min">{minTemperature()}°</span>
       </div>
     </div>
@@ -69,7 +68,7 @@ export default function WeatherForecast(props) {
           {forecast.map(function (dailyForecast, index) {
             if (index > 0 && index < 7) {
               return (
-                <div className="col weather-forecast-date" key={index}>
+                <div className="col" key={index}>
                   <WeatherForecastDay data={dailyForecast} unit={props.unit} />
                 </div>
               );
@@ -83,5 +82,6 @@ export default function WeatherForecast(props) {
   } else {
     load();
     return null;
+    // return <div className="text-center mt-5">" Loading..."</div>;
   }
 }

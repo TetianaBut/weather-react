@@ -55,10 +55,10 @@ export default function Weather(props) {
   }
 
   function FavoriteSity() {
-    let favorites = ["Kyiv", "Paris", "Brno", "New York"];
+    let favorites = ["Kyiv", "Paris", "Brno", "Ashquelon", "New York"];
     return (
       <header>
-        <ul className="city-favorites">
+        <ul className="mb-4 d-flex justify-content-end">
           {favorites.map(function (favoriteCity, index) {
             return (
               <li className="item-city-favorites" key={index}>
