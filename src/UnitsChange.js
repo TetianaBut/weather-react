@@ -32,9 +32,15 @@ export default function UnitsChange(props) {
     <div>
       <div className="Weather-temperature d-flex align-items-start">
         <strong>{showTeperature()}</strong>
-        <a href="/" onClick={rewriteUnit}>
-          {showUnit()}
-        </a>
+        <div>
+          <a
+            className="btn btn-primary location-btn"
+            href="/"
+            onClick={rewriteUnit}
+          >
+            {showUnit()}
+          </a>
+        </div>
       </div>
     </div>
   );

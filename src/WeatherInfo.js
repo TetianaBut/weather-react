@@ -27,7 +27,7 @@ function FormattedDate(props) {
     minutes = `0${minutes}`;
   }
   return (
-    <div>
+    <div className="country text-opacity">
       {day} {hours}:{minutes}
     </div>
   );
