@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function UnitsChange(props) {
   // const [unit, setUnit] = useState("metric");
@@ -13,8 +13,10 @@ export default function UnitsChange(props) {
   function rewriteUnit(event) {
     event.preventDefault();
     if (props.unit === "metric") {
+      // setUnits("imperial");
       props.setUnit("imperial");
     } else {
+      // setUnits("metric");
       props.setUnit("metric");
     }
   }
