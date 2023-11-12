@@ -81,7 +81,8 @@ export default function Weather(props) {
 
   if (weather.ready) {
     return (
-      <div className="Weather-container">
+      // <div className="Weather-container">
+      <div>
         <FavoriteSity />
         <form className="form-input}">
           <div className="row d-flex justify-content-center">

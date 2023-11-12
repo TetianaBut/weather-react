@@ -8,8 +8,9 @@ function App() {
     <div className="App ">
       <header className="App-header">
         <h1 className="text-center">Hello Weather React </h1>
-
-        <Weather defaultCity="New York" />
+        <div className="Weather-container">
+          <Weather defaultCity="New York" />
+        </div>
       </header>
       <footer className="text-center">
         This page was built by 👩‍💻
