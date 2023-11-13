@@ -34,7 +34,7 @@ export default function UnitsChange(props) {
         <strong>{showTeperature()}</strong>
         <div>
           <a
-            className="btn btn-primary location-btn"
+            className="btn btn-primary bg-transparent"
             href="/"
             onClick={rewriteUnit}
           >

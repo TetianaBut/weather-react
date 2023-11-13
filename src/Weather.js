@@ -58,11 +58,12 @@ export default function Weather(props) {
     let favorites = ["Kyiv", "Paris", "Brno", "Ashquelon", "New York"];
     return (
       <header>
-        <ul className="mb-4 d-flex justify-content-end">
+        <ul>
           {favorites.map(function (favoriteCity, index) {
             return (
               <li className="item-city-favorites" key={index}>
                 <a
+                  className=" btn btn-primary bg-transparent"
                   href="/"
                   onClick={(event) => {
                     event.preventDefault();
@@ -82,8 +83,19 @@ export default function Weather(props) {
   if (weather.ready) {
     return (
       // <div className="Weather-container">
-      <div>
-        <FavoriteSity />
+      <div className=" Weather-background-image">
+        <div className="mb-4 d-flex justify-content-between align-items-baseline">
+          <a
+            class="logo"
+            href="https://www.shecodes.io/graduates/93245-tetiana-butok"
+            title="SheCodes Profile"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Tetiana Butok
+          </a>
+          <FavoriteSity />
+        </div>
         <form className="form-input}">
           <div className="row d-flex justify-content-center">
             <div className="col-5">
