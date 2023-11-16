@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
-// import WeatherForecastDay from "./WeatherForecastDay";
 
 function WeatherForecastDay(props) {
   function day() {
@@ -32,7 +31,7 @@ function WeatherForecastDay(props) {
       <WeatherIcon code={props.data.weather[0].icon} size={36} />
       <div className="weather-forecast-temp">
         <span className="weather-forecast-max">{maxTemperature()}° </span>
-        <span className="weather-forecast-min">{minTemperature()}°</span>
+        <span className="weather-forecast-min"> {minTemperature()}°</span>
       </div>
     </div>
   );
@@ -64,7 +63,7 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="weather-forecast">
-        <div className="row weather-week mt-4">
+        <div className="row  mt-4">
           {forecast.map(function (dailyForecast, index) {
             if (index > 0 && index < 7) {
               return (

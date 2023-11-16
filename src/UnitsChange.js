@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function UnitsChange(props) {
-  // const [unit, setUnit] = useState("metric");
-
   function showTeperature() {
     if (props.unit === "metric") {
       return Math.round(props.temperature);
@@ -32,15 +30,10 @@ export default function UnitsChange(props) {
     <div>
       <div className="Weather-temperature d-flex align-items-start">
         <strong>{showTeperature()}</strong>
-        <div>
-          <a
-            className="btn btn-primary bg-transparent"
-            href="/"
-            onClick={rewriteUnit}
-          >
-            {showUnit()}
-          </a>
-        </div>
+
+        <a href="/" onClick={rewriteUnit}>
+          {showUnit()}
+        </a>
       </div>
     </div>
   );

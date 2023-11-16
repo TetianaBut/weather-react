@@ -4,6 +4,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import "./App.css";
+import "./Picture.css";
 
 export default function Weather(props) {
   // const units = "metric";
@@ -11,12 +12,12 @@ export default function Weather(props) {
   const [units, setUnits] = useState("metric");
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ ready: false });
+  const [picture, setPicture] = useState("nul");
 
   function displayWeather(response) {
     setWeather({
       ready: true,
       coordinates: response.data.coord,
-      // date: new Date(response.data.dt * 1000),
       date: new Date(),
       name: response.data.name,
       temperature: response.data.main.temp,
@@ -26,7 +27,9 @@ export default function Weather(props) {
       // icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       country: response.data.sys.country,
+      // picture: `./img/picture_${response.data.weather[0].icon.slice(0, 2)}.jpg`,
     });
+    setPicture(`picture_${response.data.weather[0].icon.slice(0, 2)}`);
   }
 
   function retrieveDataWeather(cityName) {
@@ -63,7 +66,6 @@ export default function Weather(props) {
             return (
               <li className="item-city-favorites" key={index}>
                 <a
-                  className=" btn btn-primary bg-transparent"
                   href="/"
                   onClick={(event) => {
                     event.preventDefault();
@@ -82,11 +84,10 @@ export default function Weather(props) {
 
   if (weather.ready) {
     return (
-      // <div className="Weather-container">
-      <div className=" Weather-background-image">
+      <div className={picture}>
         <div className="mb-4 d-flex justify-content-between align-items-baseline">
           <a
-            class="logo"
+            className="logo"
             href="https://www.shecodes.io/graduates/93245-tetiana-butok"
             title="SheCodes Profile"
             target="_blank"
