@@ -28,7 +28,7 @@ export default function UnitsChange(props) {
 
   return (
     <div>
-      <div className="Weather-temperature d-flex align-items-start">
+      <div className="Weather-temperature  d-flex align-items-start">
         <strong>{showTeperature()}</strong>
 
         <a href="/" onClick={rewriteUnit}>
