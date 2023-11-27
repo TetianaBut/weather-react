@@ -15,38 +15,72 @@
 .picture_50 {
   border-radius: 10px;
   width: 600px;
-  height: 420px;
-  min-width: 300px;
+  height: 100%;
+  /* height: 420px; */
+  /* min-width: 300px; */
   /* background-image: url(./img/picture_09.jpg) no-repeat fixed; */
   background-size: cover;
-  padding: 20px 32px 15px;
 }
 .picture_01 {
-  background-image: var(--picture-opasity), url(./img/picture_01.jpg);
+  background-image: url(./img/01_clear_sky.jpg);
+  background-position-y: -75px;
 }
-
+.picture_01 .clouds,
+.picture_09 .clouds,
+.picture_10 .clouds,
+.picture_11 .clouds,
+.picture_13 .clouds,
+.picture_50 .clouds {
+  border-radius: 10px;
+  height: 100%;
+  background: var(--picture-opasity);
+  padding: 20px 32px 15px;
+}
 .picture_02 {
-  background-image: var(--picture-opasity), url(./img/picture_02.jpg);
+  background-image: var(--picture-opasity), url(./img/02_few_clouds.jpg);
 }
 .picture_03 {
-  background-image: var(--picture-opasity), url(./img/picture_03.jpg);
+  background-image: var(--picture-opasity), url(./img/03_scattered_clouds.jpg);
 }
 .picture_04 {
-  background-image: var(--picture-opasity), url(./img/picture_04.jpg);
+  background-image: var(--picture-opasity), url(./img/04_broken_clouds.jpg);
 }
 
+.picture_02 .clouds,
+.picture_03 .clouds,
+.picture_04 .clouds {
+  border-radius: 10px;
+  /* width: 600px; */
+  height: 100%;
+  /* min-width: 300px; */
+  background-image: url(./img/cloud.png);
+  background-size: cover;
+  animation: animate 100s linear infinite;
+  padding: 20px 32px 15px;
+}
+@keyframes animate {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 5440px;
+  }
+}
 .picture_09 {
-  background-image: var(--picture-opasity), url(./img/picture_09.jpg);
+  background-image: url(./img/09_rain.gif);
 }
 .picture_10 {
-  background-image: var(--picture-opasity), url(./img/picture_10.jpg);
+  background-image: url(./img/10_shower_rain-260.gif);
+  background-position-y: -320px;
 }
 .picture_11 {
-  background-image: var(--picture-opasity), url(./img/picture_11.jpg);
+  background-image: url(./img/11_thunderstorm-430.gif);
+  background-position-y: -416px;
 }
 .picture_13 {
-  background-image: var(--picture-opasity), url(./img/picture_13.jpg);
+  background-image: url(./img/13_snow-320.gif);
+  background-position-y: -286px;
 }
 .picture_50 {
-  background-image: var(--picture-opasity), url(./img/picture_50.jpg);
+  background-image: url(./img/50_mist.jpg);
 }

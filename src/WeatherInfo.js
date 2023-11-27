@@ -16,7 +16,23 @@ function FormattedDate(props) {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   let day = days[props.date.getDay()];
+  let date = props.date.getDate();
+  let month = props.date.getMonth();
   let hours = props.date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -27,8 +43,8 @@ function FormattedDate(props) {
     minutes = `0${minutes}`;
   }
   return (
-    <div className="text-danger-emphasis opacity-75">
-      {day} {hours}:{minutes}
+    <div className="opacity-50 fst-italic">
+      {day}, {date}.{months[month]} {hours}:{minutes}
     </div>
   );
 }
@@ -44,9 +60,9 @@ export default function WeatherInfo(props) {
 
   return (
     <div>
-      <div className="country">
-        <h1>{props.data.name},</h1>
-        <em>{props.data.country}</em>
+      <div className="d-flex align-items-baseline ms-4">
+        <h1>{props.data.name} </h1>
+        <em className="opacity-50 ms-2"> {props.data.country}</em>
       </div>
       <FormattedDate date={props.data.date} />
       <div className="row mt-3  align-items-center justify-content-evenly">
@@ -67,10 +83,10 @@ export default function WeatherInfo(props) {
               <span> {props.data.description}</span>
             </li>
             <li>
-              Humidity: <span>{props.data.humidity}%</span>
+              <em>Humidity</em> : <span>{props.data.humidity}%</span>
             </li>
             <li>
-              Wind: <span>{unitWind()} </span>
+              <em>Wind</em> : <span>{unitWind()} </span>
             </li>
           </ul>
         </div>

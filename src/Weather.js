@@ -85,52 +85,53 @@ export default function Weather(props) {
   if (weather.ready) {
     return (
       <div className={picture}>
-        <div className="mb-4 d-flex justify-content-between align-items-baseline">
-          <a
-            className="logo"
-            href="https://www.shecodes.io/graduates/93245-tetiana-butok"
-            title="SheCodes Profile"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Tetiana Butok
-          </a>
-          <FavoriteSity />
-        </div>
-        <form className="form-input}">
-          <div className="row d-flex justify-content-center">
-            <div className="col-5">
-              <input
-                type="search"
-                placeholder="Input name city..."
-                className="form-control search-input w-100"
-                autoFocus="on"
-                required
-                onChange={updateCity}
-              />
-            </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                className="btn btn-primary w-100 location-btn"
-                value="Search"
-                onClick={handleSubmit}
-              />
-            </div>
-            <div className="col-4">
-              <button
-                type="button"
-                className="btn btn-primary w-100 location-btn"
-                onClick={currentLocation}
-              >
-                Current location
-              </button>
-            </div>
+        <div className="clouds">
+          <div className="mb-4 d-flex justify-content-between align-items-baseline">
+            <a
+              className="logo fw-bold lh-1 text-decoration-none"
+              href="https://www.shecodes.io/graduates/93245-tetiana-butok"
+              title="SheCodes Profile"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Tetiana Butok
+            </a>
+            <FavoriteSity />
           </div>
-        </form>
-
-        <WeatherInfo unit={units} setUnit={setUnits} data={weather} />
-        <WeatherForecast coordinates={weather.coordinates} unit={units} />
+          <form className="form-input}">
+            <div className="row d-flex justify-content-center">
+              <div className="col-5">
+                <input
+                  type="search"
+                  placeholder="Input name city..."
+                  className="form-control search-input w-100"
+                  autoFocus="on"
+                  required
+                  onChange={updateCity}
+                />
+              </div>
+              <div className="col-3">
+                <input
+                  type="submit"
+                  className="btn  w-100 location-btn"
+                  value="Search"
+                  onClick={handleSubmit}
+                />
+              </div>
+              <div className="col-4">
+                <button
+                  type="button"
+                  className="btn  w-100 location-btn"
+                  onClick={currentLocation}
+                >
+                  Current location
+                </button>
+              </div>
+            </div>
+          </form>
+          <WeatherInfo unit={units} setUnit={setUnits} data={weather} />
+          <WeatherForecast coordinates={weather.coordinates} unit={units} />
+        </div>
       </div>
     );
   } else {
