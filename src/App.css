@@ -19,6 +19,9 @@
     rgb(207, 213, 195, 1) 50%
   );
 }
+body {
+  background: #fff3cd40;
+}
 .App {
   font-family: sans-serif;
   text-shadow: var(--text-shadow);
